@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1757564932020",
+    "username": "admin",
+    "password": "123456",
+    "name": "Administrador",
+    "email": "admin@ecophos.local",
+    "role": "admin",
+    "createdAt": "2025-09-11T04:28:52.020Z"
+  }
+]

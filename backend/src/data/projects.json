@@ -1,0 +1,93 @@
+[
+  {
+    "id": "7f2427cd-5c32-4c7b-a40f-8fa660015c85",
+    "userId": "1757569013245",
+    "title": "sadwqdqw",
+    "description": "dwqdqwdwqdasdsadqwdwq ds qw dqw sawqdwqdwqdwq eqweqsad",
+    "createdAt": "2025-09-11T05:39:57.735Z",
+    "tasks": [
+      {
+        "id": "1757570986711",
+        "status": "Completado",
+        "priority": "Alta",
+        "owner": "Mateo",
+        "desc": "Terminar frontend",
+        "createdAt": "2025-09-11T06:09:46.711Z"
+      },
+      {
+        "id": "1757570996472",
+        "status": "Completado",
+        "priority": "Alta",
+        "owner": "Ronald",
+        "desc": "Terminar backend",
+        "createdAt": "2025-09-11T06:09:56.472Z"
+      },
+      {
+        "id": "1757571007403",
+        "status": "Pendiente",
+        "priority": "Alta",
+        "owner": "Hacer servicios",
+        "desc": "Johan",
+        "createdAt": "2025-09-11T06:10:07.403Z"
+      },
+      {
+        "id": "1757571024124",
+        "status": "En progreso",
+        "priority": "Alta",
+        "owner": "Anderson",
+        "desc": "Agregar base de datos a servicio",
+        "createdAt": "2025-09-11T06:10:24.124Z"
+      },
+      {
+        "id": "1757571556718",
+        "status": "Completado",
+        "priority": "Alta",
+        "owner": "ejemplo",
+        "desc": "scroll",
+        "createdAt": "2025-09-11T06:19:16.718Z"
+      }
+    ]
+  },
+  {
+    "id": "d79bae6f-81d4-4d73-a97e-c8bb14dc35a9",
+    "userId": "1757569013245",
+    "title": "asdasdwqd",
+    "description": "qwdwqdwqdwqdsad qsd q",
+    "createdAt": "2025-09-11T05:51:00.441Z",
+    "tasks": []
+  },
+  {
+    "id": "25ed6c98-48e3-4007-b19b-432b47083529",
+    "userId": "1757614719478",
+    "title": "dhwqidqwdwqk",
+    "description": "wqdkdqwidwqldjqwjodqwdñlqwm",
+    "createdAt": "2025-09-11T18:18:47.730Z",
+    "tasks": [
+      {
+        "id": "1757614741369",
+        "status": "Pendiente",
+        "priority": "Baja",
+        "owner": "Cualquier",
+        "desc": "backend",
+        "createdAt": "2025-09-11T18:19:01.369Z"
+      }
+    ]
+  },
+  {
+    "id": "08cd57fb-2ed2-4162-b72b-5a188e9894ca",
+    "userId": "1757615534648",
+    "title": "sadsasda",
+    "description": "sldnqwkdnwqidnqwldaslk",
+    "createdAt": "2025-09-11T18:32:19.579Z",
+    "tasks": [
+      {
+        "id": "1757615549313",
+        "status": "Completado",
+        "priority": "Alta",
+        "owner": "johan",
+        "desc": "XD",
+        "createdAt": "2025-09-11T18:32:29.313Z"
+      }
+    ]
+  }
+]
