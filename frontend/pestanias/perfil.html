@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOPHOS — Mi perfil</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/styleLogin.css"/>
+  <link rel="stylesheet" href="../css/styleProjects.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">ECOPHOS</div>
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">Inicio</a>
+      <a href="./nosotros.html" class="nav-link">Nosotros</a>
+      <a href="./proyectos.html" class="nav-link">Proyectos</a>
+      <a href="./servicios.html" class="nav-link">Servicios</a>
+      <a href="./noticias.html" class="nav-link">Noticias</a>
+      <a href="./contacto.html" class="nav-link">Contacto</a>
+      <a href="./perfil.html" class="nav-link is-active">Mi perfil</a>
+    </nav>
+  </header>
+
+  <main class="container auth">
+    <section class="auth-card">
+      <!-- Tabs: solo login + admin -->
+      <div class="auth-tabs">
+        <button class="tab active" data-tab="login">Iniciar sesión</button>
+        <button class="tab" data-tab="admin">Admin</button>
+        <script>
+          document.querySelector('.tab[data-tab="admin"]')
+          ?.addEventListener('click', () => { window.location.href = './admin.html'; });
+        </script>
+      </div>
+
+      <!-- Login -->
+      <form id="loginForm" class="auth-form show">
+        <label>Correo electrónico
+          <input name="email" type="email" required placeholder="tucorreo@ejemplo.com">
+        </label>
+        <label>Contraseña
+          <input name="password" type="password" required placeholder="••••••••">
+        </label>
+        <button class="cta" type="submit">Entrar</button>
+        <p class="form-msg" id="loginMsg"></p>
+      </form>
+
+      <!-- (Registro eliminado) -->
+
+      <!-- Perfil -->
+      <div id="profileBox" class="profile-box" style="display: none;">
+        <h3>Bienvenido 👋</h3>
+        <form id="profile-form">
+          <label>Nombre:
+            <input type="text" id="profile-name" name="name" disabled />
+          </label>
+          <label>Correo:
+            <input type="email" id="profile-email" name="email" disabled />
+          </label>
+          <label>Teléfono:
+            <input type="text" id="profile-phone" name="phone" disabled />
+          </label>
+          <div class="buttons">
+            <button type="button" id="edit-btn">Editar</button>
+            <button type="submit" id="save-btn" disabled>Guardar cambios</button>
+          </div>
+          <p class="form-msg" id="editMsg"></p>
+        </form>
+
+        <!-- ====== Proyectos del usuario ====== -->
+        <section class="project-panel">
+          <div class="project-panel__head">
+            <h3>Mis proyectos</h3>
+            <small class="muted">Crea, lista o elimina tus proyectos personales.</small>
+          </div>
+
+          <form id="projectForm" class="project-form">
+            <input type="text" id="projTitle" placeholder="Título del proyecto" required />
+            <textarea id="projDesc" placeholder="Descripción breve" required></textarea>
+            <button type="submit" class="cta">Agregar proyecto</button>
+            <p class="form-msg" id="projMsg"></p>
+          </form>
+
+          <ul id="projectList" class="project-list"></ul>
+
+          <!-- (Modal de gestionar se mantiene igual) -->
+          <div id="manageModal" class="mg-modal"> … </div>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </section>
+
+        <button class="btn-outline" id="logoutBtn">Cerrar sesión</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/perfil.js"></script>
+  <script src="../js/projects_profile.js"></script>
+</body>
+</html>

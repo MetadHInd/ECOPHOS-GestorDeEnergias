@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOPHOS — Noticias</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <!-- (opcional) estilos específicos de cards; si ya tienes uno para proyectos, puedes reutilizarlo -->
+  <link rel="stylesheet" href="../css/styleNews.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">ECOPHOS</div>
+  <nav class="nav">
+    <a href="../index.html" class="nav-link">Inicio</a>
+    <a href="./nosotros.html" class="nav-link">Nosotros</a>
+    <a href="./proyectos.html" class="nav-link">Proyectos</a>
+    <a href="./servicios.html" class="nav-link">Servicios</a>
+    <a href="./noticias.html" class="nav-link is-active">Noticias</a>
+    <a href="./contacto.html" class="nav-link">Contacto</a>
+    <a href="./perfil.html" class="nav-link">Mi perfil</a>
+  </nav>
+</header>
+
+<!-- Cabecera -->
+<section class="page-head page-head--blue">
+  <div class="page-head__inner">
+    <h1>Noticias y novedades</h1>
+    <p class="lead">Actualizaciones, logros y avances en energía sostenible.</p>
+  </div>
+</section>
+
+<main class="container">
+  <!-- Estado de carga -->
+  <p id="newsMsg" class="muted" style="margin:16px 0;">Cargando noticias…</p>
+
+  <!-- Grid de noticias -->
+  <section id="newsGrid" class="cards-grid" aria-live="polite"></section>
+</main>
+
+<script src="../js/news_public.js"></script>
+</body>
+</html>

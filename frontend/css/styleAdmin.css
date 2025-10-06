@@ -1,0 +1,106 @@
+.btn-outline.is-active{
+  background: var(--primary);
+  color:#fff;
+  border-color: var(--primary);
+}
+
+/* ===== Admin · Panel Nueva noticia ===== */
+.news-form {
+  max-width: 980px;              /* ancho cómodo */
+  margin: 0;                     /* usa el padding de .about-card */
+}
+
+.news-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 320px; /* columna principal + columna lateral */
+  gap: 16px 20px;                   /* filas, columnas */
+}
+
+@media (max-width: 1024px) {
+  .news-form__grid {
+    grid-template-columns: 1fr;     /* 1 columna en pantallas pequeñas */
+  }
+}
+
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field--full { grid-column: 1 / -1; }  /* ocupa todo el ancho del grid */
+.field--half { align-self: end; }      /* alinea con el botón/inputs laterales */
+
+.field__label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.news-form input[type="text"],
+.news-form input[type="date"],
+.news-form input[type="file"],
+.news-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #E6E8EF;
+  border-radius: 10px;
+  outline: none;
+  font: inherit;
+}
+
+.news-form textarea { resize: vertical; min-height: 110px; }
+
+/* Botón + mensaje alineados */
+.news-form__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.news-form__actions .cta {
+  padding: 10px 18px;            /* botón un poco más compacto */
+}
+
+/* Ajuste de la tarjeta contenedora para respiración visual */
+#newsFormWrap.about-card {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.about-card table td, 
+.about-card table th {
+  padding: 12px 10px;
+}
+
+
+/* Botón CTA genérico (puedes sobrescribir tu .cta si ya lo usas) */
+#userCreateForm .cta {
+  background-color: #facc15;   /* amarillo */
+  color: #111827;              /* gris oscuro */
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  display: inline-block;
+  min-width: 150px;            /* ancho mínimo consistente */
+  text-align: center;
+}
+
+#userCreateForm .cta:hover {
+  background-color: #eab308;   /* amarillo más fuerte */
+  transform: translateY(-1px);
+}
+
+#userCreateForm .cta:active {
+  transform: translateY(0);
+}
+
+/* Ajuste para alinear botón con los campos */
+#userCreateForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+#userCreateForm .cta {
+  grid-column: 1 / -1;   /* botón ocupa todo el ancho debajo de los inputs */
+  justify-self: start;   /* lo dejas a la izquierda */
+  margin-top: 4px;
+}

@@ -1,0 +1,31 @@
+/* Grid reutilizable */
+.cards-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  gap:18px;
+  padding: 8px 0 28px;
+}
+
+/* Card base */
+.card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.04);
+  display:flex; flex-direction:column;
+}
+
+/* Media (imagen) */
+.card-media{
+  width:100%; height:160px;
+  background-size:cover; background-position:center;
+}
+
+/* Contenido */
+.card-body{ padding:16px; }
+.card-title{ margin:0 0 6px; color:var(--primary); font-size:18px; }
+.card-text{ margin:0 0 12px; color:#4b5563; line-height:1.55; }
+.card-meta{ font-size:13px; color:#6b7280; display:flex; gap:6px; align-items:center; }
+.btn-link{ display:inline-block; margin-top:8px; color:var(--primary); font-weight:600; text-decoration:none; }
+.btn-link:hover{ text-decoration:underline; }

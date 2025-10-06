@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOPHOS — Proyectos</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/styleProjects.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">ECOPHOS</div>
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">Inicio</a>
+      <a href="./nosotros.html" class="nav-link">Nosotros</a>
+      <a href="./proyectos.html" class="nav-link is-active">Proyectos</a>
+      <a href="./servicios.html" class="nav-link">Servicios</a>
+      <a href="./noticias.html" class="nav-link">Noticias</a>
+      <a href="./contacto.html" class="nav-link">Contacto</a>
+      <a href="./perfil.html" class="nav-link">Mi perfil</a>
+    </nav>
+  </header>
+
+  <!-- Cabecera de la página -->
+  <section class="page-head page-head--blue">
+    <div class="page-head__inner">
+      <h1>Panel de proyectos</h1>
+      <p class="lead">Explora los proyectos creados por la comunidad ECOPHOS.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Filtros simples (opcional) -->
+    <section class="projects-toolbar">
+      <input id="searchInput" class="input" type="search" placeholder="Buscar por título o descripción…">
+      <span id="countBadge" class="badge">0</span>
+    </section>
+
+    <!-- Grid de cards -->
+         <!-- Grid de cards -->
+    <section id="projectsGrid" class="cards-grid"></section>
+
+    <!-- ====== Modal público de proyecto ====== -->
+    <div id="publicModal" class="mg-modal">
+      <div class="mg-card">
+        <div class="mg-head">
+          <h3 id="pubTitle" class="mg-title">Proyecto</h3>
+          <button class="mg-close" id="pubClose" aria-label="Cerrar">✕</button>
+        </div>
+
+        <div class="mg-body">
+          <!-- Tabla solo lectura (sin acciones) -->
+          <div class="mg-tablewrap">
+            <table class="mg-table">
+              <thead>
+                <tr>
+                  <th>Estado</th>
+                  <th>Prioridad</th>
+                  <th>Responsable</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody id="pubTbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Gráfica -->
+          <div class="mg-chartwrap">
+            <div class="mg-canvas">
+              <canvas id="pubChart"></canvas>
+            </div>
+            <ul class="mg-legend">
+              <li><span class="dot done"></span> Completado</li>
+              <li><span class="dot prog"></span> En progreso</li>
+              <li><span class="dot pend"></span> Pendiente</li>
+            </ul>
+          </div>
+
+          <div class="mg-foot">
+            <button id="pubBack" class="btn-outline">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart.js para la dona -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    
+
+    <!-- Mensajes de estado -->
+    <p id="projectsMsg" class="muted"></p>
+  </main>
+
+  <script src="../js/projects_public.js"></script>
+</body>
+</html>

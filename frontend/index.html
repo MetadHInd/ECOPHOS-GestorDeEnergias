@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOPHOS — Inicio</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">ECOPHOS</div>
+    <nav class="nav">
+      <a href="index.html" class="nav-link is-active">Inicio</a>
+      <a href="pestanias/nosotros.html" class="nav-link">Nosotros</a>
+      <a href="pestanias/proyectos.html" class="nav-link">Proyectos</a>
+      <a href="pestanias/servicios.html" class="nav-link">Servicios</a>
+      <a href="pestanias/noticias.html" class="nav-link">Noticias</a>
+      <a href="pestanias/contacto.html" class="nav-link">Contacto</a>
+      <a href="pestanias/perfil.html" class="nav-link">Mi perfil</a>
+    </nav>
+  </header>
+
+<main>
+  <section class="hero">
+  <picture>
+    <!-- móviles -->
+    <source srcset="./img/hero-wind-sm.jpg" media="(max-width: 600px)">
+    <!-- tablets -->
+    <source srcset="./img/hero-wind-md.jpg" media="(max-width: 1024px)">
+    <!-- desktop -->
+    <img src="./img/hero-wind.jpg" alt="Parque eólico sobre un mar de nubes" class="hero-img" loading="eager" fetchpriority="high">
+  </picture>
+  <div class="overlay"></div>
+  <div class="hero-inner">
+    <div>
+      <h1>Tecnología renovable al servicio de la sostenibilidad</h1>
+      <p>Gestionamos proyectos energéticos que transforman territorios.</p>
+      <a class="cta btn-primary" href="./contacto.html">Reservas de asesoría</a>
+    </div>
+  </div>
+  </section>
+
+  <div class="container">
+    <!-- aquí puedes poner el resto del contenido de la home -->
+  </div>
+</main>
+
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

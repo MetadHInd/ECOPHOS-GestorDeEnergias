@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ECOPHOS — Contacto</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">ECOPHOS</div>
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">Inicio</a>
+      <a href="./nosotros.html" class="nav-link">Nosotros</a>
+      <a href="./proyectos.html" class="nav-link">Proyectos</a>
+      <a href="./servicios.html" class="nav-link">Servicios</a>
+      <a href="./noticias.html" class="nav-link">Noticias</a>
+      <a href="./contacto.html" class="nav-link is-active">Contacto</a>
+      <a href="./perfil.html" class="nav-link">Mi perfil</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Cabecera azul -->
+    <section class="page-head page-head--blue">
+      <div class="page-head__inner">
+        <h1>Contacto</h1>
+        <p class="lead">Escríbenos para más información o reservas de asesoría.</p>
+      </div>
+    </section>
+
+    <!-- Grid formulario + mapa -->
+    <section class="container contact">
+      <form class="contact-form" id="contactForm">
+        <label>Nombre completo
+          <input type="text" name="name" required placeholder="Tu nombre">
+        </label>
+
+        <label>Número de celular
+          <input type="tel" name="phone" required placeholder="Ej. 300 123 4567">
+        </label>
+
+        <label>Correo electrónico
+          <input type="email" name="email" required placeholder="tucorreo@ejemplo.com">
+        </label>
+
+        <label>Mensaje
+          <textarea name="message" rows="5" required placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+        </label>
+
+        <button class="btn btn-primary cta" type="submit">Enviar</button>
+        <p id="contactMsg" class="muted"></p>
+      </form>
+
+      <aside class="contact-map">
+        <h3 class="map-title">Ubicación — UPB Bucaramanga</h3>
+        <div class="map-card">
+          <iframe
+            title="UPB Bucaramanga"
+            src="https://maps.google.com/maps?q=Universidad%20Pontificia%20Bolivariana%20Bucaramanga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <small class="muted">Km 7 Vía Piedecuesta, Floridablanca, Santander</small>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const out = await res.json();
+
+      if (res.ok) {
+        document.getElementById('contactMsg').textContent =
+          '✅ ¡Gracias! Hemos recibido tu mensaje.';
+        form.reset();
+      } else {
+        document.getElementById('contactMsg').textContent =
+          '❌ Error: ' + (out.error || 'No se pudo enviar el mensaje.');
+      }
+    } catch (err) {
+      document.getElementById('contactMsg').textContent =
+        '⚠️ Error de conexión con el servidor.';
+    }
+  });
+</script>
+
+
+
+</body>
+</html>
