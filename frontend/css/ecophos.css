@@ -1,0 +1,381 @@
+/* Barra de navegacion */
+
+.socialMedia {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2%;
+    padding: 0.2%;
+    background-color: rgba(30, 86, 161, 1);
+}
+
+.socialMediaLinks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: initial;
+    gap: 2%;
+    padding: 0;
+    align-items: center;
+}
+
+.iconSocialMedia img{
+    width: 30px;
+    height: 40%;
+    object-fit: contain;
+}
+
+.Whiteparagraph{
+    color: #ffff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.sobreponer {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+}
+
+.navegacion {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; 
+  gap: 1%;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  background-color: #fff;
+  border-radius: 25px;
+  border: 1px solid rgba(30, 86, 161, 1);
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  overflow-x: auto; 
+  white-space: nowrap; 
+  
+}
+
+
+#logoECOPHOSNegro{
+    font-weight: bold;
+}
+
+#logoECOPHOSBlanco{
+    color: #fff;
+    font-weight: bold;
+}
+
+#logoECOPHOSAmarillo{
+    font-weight: bold;
+    color: #ffdf46;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.navegacion a{
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+
+#aNosotros{
+    width: 40%;
+}
+
+
+.navegacion a:hover{
+    color: rgba(30, 86, 161, 1);
+    border-radius: 25px;
+    transition: 1s;
+    font-size: 19px;
+}
+
+/* Inicio */
+
+.imgBackgroundtext {
+    width: 100%;
+    height: 85vh;
+    background: url("../img/Energetic.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+.blueBackgroundVector {
+    width: 60%;
+    height: 85vh;
+    background: url("../img/blueBackgroundVector.png");
+    background-size: cover;
+    background-position: bottom;
+    filter: brightness(100%);
+    align-content: center;
+}
+
+.blueBackgroundVector h1{
+    color: #ffff;
+    font-weight: bold;
+    font-size: 45px;
+    width: 60%;
+    margin: auto;
+}
+
+.blueBackgroundVector p{
+    color: #DADADA;
+    font-size: 20px;
+    width: 60%;
+    padding: 2%;
+    margin:  auto;
+}
+
+.btnReservar{
+    width: 30%;
+    height: 7vh;
+    background: #FDD114;
+    border-radius: 25px;
+    text-align: center;
+    align-content: center;
+    margin: 0 20%;
+    transition: 1s;
+}
+
+.btnReservar a{
+    font-weight: bold;
+}
+
+.btnReservar:hover{
+    width: 31%;
+    height: 8vh;
+    background: #ffdf46;
+    transition: 1s;
+    box-shadow: 0 0 15px #b3a562;
+    color: #292929;
+}
+
+.btnReservar a:hover{
+    color: #292929;
+}
+
+.footer{
+    height: 8.5vh;
+    background-color: rgba(30, 86, 161, 1);
+}
+
+/* Apartado Nosotros */
+
+.infoNosotros{
+    margin: 7% 0;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    padding:0 5%;
+    align-items: start;
+    gap: 1%;
+    text-align: center;
+}
+
+.infoNosotros img{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 2%;
+    box-shadow: 5px 10px 20px #292929 ;
+}
+
+.txtDescriptivoNosotros{
+    height: auto;
+    padding: 2em;
+}
+
+.infoNosotros h3{
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 2.5%;
+}
+
+.infoNosotros p{
+    font-size: 17px;
+    padding-top: 2.5%;
+}
+
+
+/* Servicios/Noticias */
+
+.tituloPrincipalServicios h3{
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: bold
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 10%;
+  margin: 0 auto 5%;
+}
+
+.servicio {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio img {
+  width: 100%;
+  height: 180px;        
+  object-fit: cover;    
+  display: block;
+}
+
+.servicio h3 {
+  margin: 1rem 1.5rem 0.5rem;
+  text-align: center;
+  font-size: 17px;
+}
+
+.servicio p {
+  margin: 0 1.5rem 1.5rem;
+  text-align: justify;
+}
+
+.servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Contacto */
+
+.tituloContacto{
+    margin-top: 5%;
+    text-align: center;
+}
+
+.formularioContacto{
+    width: 97%;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2%;
+    padding-right: 0;
+    margin-bottom: 3%;
+    gap: 2%;
+}
+
+.formularioContacto input{
+    height: 10%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.formularioContacto textarea{
+    height: 20%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.contactMap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contactMap .map-card {
+  width: 100%;
+  height: 100%;
+
+}
+
+.contactMap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.contactMap .muted {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btnEnviar{
+    width: 15%;
+    height: 12%;
+    margin: 0;
+    margin-top: 2%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btnEnviar:hover{
+    width: 18%;
+    height: 15%;
+}
+
+
+/* Footer */
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    background-color: #1E56A1;
+    color: #fff;
+    padding: 2em;
+    text-align: center;
+    height: auto;
+    align-items: center; 
+    justify-items: center; 
+}
+
+.footer p{
+    color: #fff;
+}
+
+.seccionesFooter {
+    padding: 2em;
+    text-align: center;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em; 
+  text-align: center;
+  justify-items: center;
+}
+
+.divisionInfo h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  color: #ffcc00; 
+}
+
+.divisionInfo a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 0.4em 0;
+}
+
+.divisionInfo a:hover {
+  color: #ffcc00;
+}
+.footer-social img {
+    margin: 0 0.5em;
+}
+
+#centrar{
+    padding-top: 5%;
+}
+

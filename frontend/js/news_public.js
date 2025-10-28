@@ -8,36 +8,63 @@ init();
 async function init() {
   msg.textContent = 'Cargando noticias…';
   grid.innerHTML = '';
+
   try {
     const r = await fetch(API_NEWS);
-    if (!r.ok) throw 0;
+    if (!r.ok) throw new Error('Respuesta no válida del servidor');
     const items = await r.json();
-    if (!items.length) { msg.textContent = 'Aún no hay noticias.'; return; }
-    items.sort((a,b)=> new Date(b.datePublished) - new Date(a.datePublished));
+
+    if (!items.length) {
+      msg.textContent = 'Aún no hay noticias.';
+      return;
+    }
+
+    // Ordenar por fecha descendente
+    items.sort((a, b) => new Date(b.datePublished) - new Date(a.datePublished));
+
+    // Asignar estilos tipo "servicios"
+    grid.className = 'servicios';
+
+    // Crear tarjetas
     const frag = document.createDocumentFragment();
     items.forEach(n => frag.appendChild(card(n)));
     grid.appendChild(frag);
+
     msg.textContent = '';
-  } catch {
-    msg.textContent = '⚠️ Error cargando noticias';
+  } catch (err) {
+    console.error('Error cargando noticias:', err);
+    msg.textContent = '⚠️ Error cargando noticias.';
   }
 }
 
 function card(n) {
   const art = document.createElement('article');
-  art.className = 'card news-card';
-  const header = n.image ? `<div class="card-media" style="background-image:url('${esc(n.image)}')"></div>` : '';
+  art.className = 'servicio'; // usa el mismo diseño de servicios
+
   art.innerHTML = `
-    ${header}
-    <div class="card-body">
-      <h3 class="card-title">${esc(n.title)}</h3>
-      <p class="card-text">${esc(n.description)}</p>
-      <div class="card-meta">
-        <time datetime="${esc(n.datePublished)}">${fmt(n.datePublished)}</time>
-      </div>
-    </div>
+    ${n.image ? `<img src="${esc(n.image)}" alt="${esc(n.title)}">` : ''}
+    <h3>${esc(n.title)}</h3>
+    <p>${esc(n.description)}</p>
+    <p style="text-align:center; font-size:14px; color:#666; margin-bottom:1rem;">
+      📅 ${fmt(n.datePublished)}
+    </p>
   `;
+
   return art;
 }
-const esc = s => String(s||'').replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[m]));
-const fmt = iso => { try{ return new Date(iso).toLocaleDateString([], { dateStyle:'medium' }); }catch{ return iso||''; } };
+
+// Sanitizador de texto
+const esc = s => String(s || '').replace(/[&<>"']/g, m => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'
+}[m]));
+
+// Formateador de fecha
+const fmt = iso => {
+  try {
+    return new Date(iso).toLocaleDateString('es-CO', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    });
+  } catch {
+    return iso || '';
+  }
+};

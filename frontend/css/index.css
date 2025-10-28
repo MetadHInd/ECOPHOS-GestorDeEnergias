@@ -1,0 +1,32 @@
+p{
+    font-family: "AppleSystemUIFont","Noto Sans Sora Sompeng", "Arial", serif;
+    color: #151414;
+    font-size: 16px;
+}
+
+h1, h2, h3{
+    font-family: "AppleSystemUIFont","Noto Sans Sora Sompeng", "Arial", serif;
+    color: #151414;
+    font-size: 25px;
+    margin: 0;
+}
+
+a{
+    font-family: "AppleSystemUIFont","Noto Sans Sora Sompeng", "Arial", serif;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    object-fit: contain;
+    height: 40%;
+    padding: 0;
+    margin: 0;
+}
+

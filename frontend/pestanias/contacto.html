@@ -1,77 +1,84 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ECOPHOS — Contacto</title>
-  <link rel="stylesheet" href="../css/style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | ECOPHOS</title>
+  <link href="../css/index.css" rel="stylesheet">
+  <link href="../css/ecophos.css" rel="stylesheet">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">ECOPHOS</div>
-    <nav class="nav">
-      <a href="../index.html" class="nav-link">Inicio</a>
-      <a href="./nosotros.html" class="nav-link">Nosotros</a>
-      <a href="./proyectos.html" class="nav-link">Proyectos</a>
-      <a href="./servicios.html" class="nav-link">Servicios</a>
-      <a href="./noticias.html" class="nav-link">Noticias</a>
-      <a href="./contacto.html" class="nav-link is-active">Contacto</a>
-      <a href="./perfil.html" class="nav-link">Mi perfil</a>
-    </nav>
-  </header>
 
-  <main>
-    <!-- Cabecera azul -->
-    <section class="page-head page-head--blue">
-      <div class="page-head__inner">
-        <h1>Contacto</h1>
-        <p class="lead">Escríbenos para más información o reservas de asesoría.</p>
-      </div>
-    </section>
+<!-- Redes sociales -->
+<div class="socialMedia">
+  <div class="socialMediaLinks">
+    <div class="iconSocialMedia"><img src="../img/Facebook-Icon.png" alt="Facebook"></div>
+    <p class="Whiteparagraph">Facebook</p>
+  </div>
+  <div class="socialMediaLinks">
+    <div class="iconSocialMedia"><img src="../img/Instagram-Icon.png" alt="Instagram"></div>
+    <p class="Whiteparagraph">Instagram</p>
+  </div>
+  <div class="socialMediaLinks">
+    <div class="iconSocialMedia"><img src="../img/Twitter-Icon.png" alt="Twitter"></div>
+    <p class="Whiteparagraph">Twitter</p>
+  </div>
+  <div class="iconProfilePhoto"></div>
+</div>
 
-    <!-- Grid formulario + mapa -->
-    <section class="container contact">
-      <form class="contact-form" id="contactForm">
-        <label>Nombre completo
-          <input type="text" name="name" required placeholder="Tu nombre">
-        </label>
+<!-- Navegación -->
+<div class="Sobreponer">
+  <div class="navegacion">
+    <a id="logoECOPHOSNegro">ECO <span id="logoECOPHOSAmarillo">PHOS</span></a>
+    <a href="nosotros.html">Nosotros</a><p>| </p>
+    <a href="proyectos.html">Proyectos</a><p>| </p>
+    <a href="servicios.html">Servicios</a><p>| </p>
+    <a href="noticias.html">Noticias</a><p>| </p>
+    <a href="contacto.html">Contacto</a><p>| </p>
+    <a href="perfil.html">Mi perfil</a>
+  </div>
+</div>
 
-        <label>Número de celular
-          <input type="tel" name="phone" required placeholder="Ej. 300 123 4567">
-        </label>
+<!-- Contacto -->
+<h3 class="tituloContacto">Formulario de contacto</h3>
 
-        <label>Correo electrónico
-          <input type="email" name="email" required placeholder="tucorreo@ejemplo.com">
-        </label>
+<div class="formularioContacto">
+  <form class="contact-form" id="contactForm">
+    <p>Nombre completo</p>
+    <input type="text" name="name" required placeholder="Tu nombre">
 
-        <label>Mensaje
-          <textarea name="message" rows="5" required placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
-        </label>
+    <p>Número de celular</p>
+    <input type="tel" name="phone" required placeholder="Ej. 300 123 4567">
 
-        <button class="btn btn-primary cta" type="submit">Enviar</button>
-        <p id="contactMsg" class="muted"></p>
-      </form>
+    <p>Correo electrónico</p>
+    <input type="email" name="email" required placeholder="tucorreo@ejemplo.com">
 
-      <aside class="contact-map">
-        <h3 class="map-title">Ubicación — UPB Bucaramanga</h3>
-        <div class="map-card">
-          <iframe
-            title="UPB Bucaramanga"
-            src="https://maps.google.com/maps?q=Universidad%20Pontificia%20Bolivariana%20Bucaramanga&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-        <small class="muted">Km 7 Vía Piedecuesta, Floridablanca, Santander</small>
-      </aside>
-    </section>
-  </main>
+    <p>Mensaje</p>
+    <textarea name="message" rows="5" required placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
 
-  <script>
+    <button class="btn btn-primary cta btnReservar btnEnviar" type="submit"><p>Enviar</p></button>
+    <p id="contactMsg" class="muted"></p>
+  </form>
+
+  <aside class="contactMap">
+    <div class="map-card">
+      <iframe
+        title="UPB Bucaramanga"
+        src="https://maps.google.com/maps?q=Universidad%20Pontificia%20Bolivariana%20Bucaramanga&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <small class="muted">Km 7 Vía Piedecuesta, Floridablanca, Santander</small>
+  </aside>
+</div>
+
+<!-- Script -->
+<script src="../js/app.js"></script>
+<script>
   document.getElementById('contactForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-
     const form = e.target;
     const data = {
       name: form.name.value,
@@ -79,32 +86,58 @@
       email: form.email.value,
       message: form.message.value
     };
-
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-
       const out = await res.json();
-
-      if (res.ok) {
-        document.getElementById('contactMsg').textContent =
-          '✅ ¡Gracias! Hemos recibido tu mensaje.';
-        form.reset();
-      } else {
-        document.getElementById('contactMsg').textContent =
-          '❌ Error: ' + (out.error || 'No se pudo enviar el mensaje.');
-      }
-    } catch (err) {
       document.getElementById('contactMsg').textContent =
-        '⚠️ Error de conexión con el servidor.';
+        res.ok ? '✅ ¡Gracias! Hemos recibido tu mensaje.' :
+        '❌ Error: ' + (out.error || 'No se pudo enviar el mensaje.');
+      if (res.ok) form.reset();
+    } catch (err) {
+      document.getElementById('contactMsg').textContent = '⚠️ Error de conexión con el servidor.';
     }
   });
 </script>
 
+<!-- Footer -->
+<footer class="footer">
+  <div class="seccionesFooter footer-brand">
+    <a id="logoECOPHOSBlanco">ECO <span id="logoECOPHOSAmarillo">PHOS</span></a>
+    <p>Innovando en energías limpias y sostenibles para un futuro más verde.</p>
+  </div>
 
+  <div class="seccionesFooter">
+    <nav class="footer-nav">
+      <div class="divisionInfo">
+        <h3>Información</h3>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="servicios.html">Servicios</a>
+      </div>
 
+      <div class="divisionInfo">
+        <h3 class="centrar" id="logoECOPHOSAmarillo">Canales de comunicación</h3>
+        <a href="contacto.html">Contacto</a>
+        <a href="noticias.html">Noticias</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="seccionesFooter footer-social">
+    <a href="#" aria-label="Facebook" class="iconSocialMedia">
+      <img src="../img/Facebook-Icon.png" alt="Facebook">
+    </a>
+    <a href="#" aria-label="Instagram" class="iconSocialMedia">
+      <img src="../img/Instagram-Icon.png" alt="Instagram">
+    </a>
+    <a href="#" aria-label="Twitter" class="iconSocialMedia">
+      <img src="../img/Twitter-Icon.png" alt="Twitter">
+    </a>
+  </div>
+</footer>
 </body>
 </html>

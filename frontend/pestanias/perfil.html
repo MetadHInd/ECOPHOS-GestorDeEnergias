@@ -24,7 +24,7 @@
 
   <main class="container auth">
     <section class="auth-card">
-      <!-- Tabs: solo login + admin -->
+      <!-- Tabs -->
       <div class="auth-tabs">
         <button class="tab active" data-tab="login">Iniciar sesión</button>
         <button class="tab" data-tab="admin">Admin</button>
@@ -45,8 +45,6 @@
         <button class="cta" type="submit">Entrar</button>
         <p class="form-msg" id="loginMsg"></p>
       </form>
-
-      <!-- (Registro eliminado) -->
 
       <!-- Perfil -->
       <div id="profileBox" class="profile-box" style="display: none;">
@@ -84,8 +82,92 @@
 
           <ul id="projectList" class="project-list"></ul>
 
-          <!-- (Modal de gestionar se mantiene igual) -->
-          <div id="manageModal" class="mg-modal"> … </div>
+          <!-- Modal de gestión de proyectos (coincide con tu CSS: mg-modal, mg-card, mg-head, mg-body, mg-foot, mg-grid, mg-table, mg-chartwrap...) -->
+          <div id="manageModal" class="mg-modal">
+            <div class="mg-card" role="dialog" aria-modal="true" aria-labelledby="mgTitle">
+              <!-- Header -->
+              <div class="mg-head">
+                <h3 id="mgTitle" class="mg-title"></h3>
+                <button id="mgClose" class="mg-close" type="button" aria-label="Cerrar modal">✖</button>
+              </div>
+
+              <!-- Body -->
+              <div class="mg-body">
+                <!-- Formulario compacto (usa las mismas names que espera el backend JS) -->
+                <form id="taskForm" class="mg-grid">
+                  <label>
+                    Estado
+                    <select name="status" required>
+                      <option value="">Estado</option>
+                      <option>Completado</option>
+                      <option>En progreso</option>
+                      <option>Pendiente</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Prioridad
+                    <select name="priority" required>
+                      <option value="">Prioridad</option>
+                      <option>Alta</option>
+                      <option>Media</option>
+                      <option>Baja</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Responsable
+                    <input type="text" name="owner" placeholder="Responsable" required />
+                  </label>
+
+                  <label>
+                    Descripción
+                    <input type="text" name="desc" placeholder="Descripción (opcional)" />
+                  </label>
+
+                  <button type="submit" class="cta">Agregar tarea</button>
+                  <p id="taskMsg" class="form-msg"></p>
+                </form>
+
+                <!-- Tabla de tareas -->
+                <div class="mg-tablewrap" style="margin-top:8px;">
+                  <table class="mg-table">
+                    <thead>
+                      <tr>
+                        <th>Estado</th>
+                        <th>Prioridad</th>
+                        <th>Responsable</th>
+                        <th>Descripción</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="taskTbody">
+                      <!-- Rellenado por JS -->
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Gráfica + leyenda -->
+                <div class="mg-chartwrap" style="margin-top:12px;">
+                  <div class="mg-canvas">
+                    <canvas id="tasksChart" aria-label="Gráfico de estado de tareas" role="img"></canvas>
+                  </div>
+                  <ul class="mg-legend">
+                    <li><span class="dot done"></span> Completado</li>
+                    <li><span class="dot prog"></span> En progreso</li>
+                    <li><span class="dot pend"></span> Pendiente</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="mg-foot">
+                <button id="mgBack" class="btn-outline" type="button">Volver</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart.js (asegúrate de que esté cargado antes de projects_profile.js) -->
           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         </section>
 

@@ -1,51 +1,99 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ECOPHOS — Inicio</title>
-  <link rel="stylesheet" href="css/style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ✅ Las rutas son relativas al archivo index.html dentro de /frontend -->
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/ecophos.css" rel="stylesheet">
+
+    <title>ECOPHOS</title>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">ECOPHOS</div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link is-active">Inicio</a>
-      <a href="pestanias/nosotros.html" class="nav-link">Nosotros</a>
-      <a href="pestanias/proyectos.html" class="nav-link">Proyectos</a>
-      <a href="pestanias/servicios.html" class="nav-link">Servicios</a>
-      <a href="pestanias/noticias.html" class="nav-link">Noticias</a>
-      <a href="pestanias/contacto.html" class="nav-link">Contacto</a>
-      <a href="pestanias/perfil.html" class="nav-link">Mi perfil</a>
-    </nav>
-  </header>
 
-<main>
-  <section class="hero">
-  <picture>
-    <!-- móviles -->
-    <source srcset="./img/hero-wind-sm.jpg" media="(max-width: 600px)">
-    <!-- tablets -->
-    <source srcset="./img/hero-wind-md.jpg" media="(max-width: 1024px)">
-    <!-- desktop -->
-    <img src="./img/hero-wind.jpg" alt="Parque eólico sobre un mar de nubes" class="hero-img" loading="eager" fetchpriority="high">
-  </picture>
-  <div class="overlay"></div>
-  <div class="hero-inner">
-    <div>
-      <h1>Tecnología renovable al servicio de la sostenibilidad</h1>
-      <p>Gestionamos proyectos energéticos que transforman territorios.</p>
-      <a class="cta btn-primary" href="./contacto.html">Reservas de asesoría</a>
+<!-- 🔗 Menú de redes sociales -->
+<div class="socialMedia">
+    <div class="socialMediaLinks">
+        <div class="iconSocialMedia">
+            <img src="./img/Facebook-Icon.png" alt="Facebook">
+        </div>
+        <p class="Whiteparagraph">Facebook</p>
     </div>
-  </div>
-  </section>
+    <div class="socialMediaLinks">
+        <div class="iconSocialMedia">
+            <img src="./img/Instagram-Icon.png" alt="Instagram">
+        </div>
+        <p class="Whiteparagraph">Instagram</p>
+    </div>
+    <div class="socialMediaLinks">
+        <div class="iconSocialMedia">
+            <img src="./img/Twitter-Icon.png" alt="Twitter">
+        </div>
+        <p class="Whiteparagraph">Twitter</p>
+    </div>
+    <div class="iconProfilePhoto"></div>
+</div>
 
-  <div class="container">
-    <!-- aquí puedes poner el resto del contenido de la home -->
-  </div>
-</main>
+<!-- 🔗 Menú de navegación -->
+<div class="Sobreponer">
+    <div class="navegacion">
+        <a id="logoECOPHOSNegro">ECO <span id="logoECOPHOSAmarillo">PHOS</span></a>
+        <a href="./pestanias/nosotros.html">Nosotros</a><p>|</p>
+        <a href="./pestanias/proyectos.html">Proyectos</a><p>|</p>
+        <a href="./pestanias/servicios.html">Servicios</a><p>|</p>
+        <a href="./pestanias/noticias.html">Noticias</a><p>|</p>
+        <a href="./pestanias/contacto.html">Contacto</a><p>|</p>
+        <a href="./pestanias/perfil.html">Mi perfil</a>
+    </div>
+</div>
 
+<!-- 🧱 Texto de inicio -->
+<div class="imgBackgroundtext">
+    <div class="blueBackgroundVector">
+        <h1 class="title">Tecnología renovable al servicio de la sostenibilidad</h1>
+        <p class="paragraph">Gestionamos proyectos energéticos que transforman territorios</p>
+        <div class="btnReservar">
+            <a href="#">Más información</a>
+        </div>
+    </div>
+</div>
 
-  <script src="./js/app.js"></script>
+<!-- 🔻 Footer -->
+<footer class="footer">
+    <div class="seccionesFooter footer-brand">
+        <a id="logoECOPHOSBlanco">ECO <span id="logoECOPHOSAmarillo">PHOS</span></a>
+        <p>Innovando en energías limpias y sostenibles para un futuro más verde.</p>
+    </div>
+
+    <div class="seccionesFooter">
+        <nav class="footer-nav">
+            <div class="divisionInfo">
+                <h3>Información</h3>
+                <a href="./pestanias/nosotros.html">Nosotros</a>
+                <a href="./pestanias/proyectos.html">Proyectos</a>
+                <a href="./pestanias/servicios.html">Servicios</a>
+            </div>
+
+            <div class="divisionInfo">
+                <h3 id="logoECOPHOSAmarillo centrar">Canales de comunicación</h3>
+                <a href="./pestanias/contacto.html">Contacto</a>
+                <a href="./pestanias/noticias.html">Noticias</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="seccionesFooter footer-social">
+        <a href="#" aria-label="Facebook" class="iconSocialMedia">
+            <img src="./img/Facebook-Icon.png" alt="Facebook">
+        </a>
+        <a href="#" aria-label="Instagram" class="iconSocialMedia">
+            <img src="./img/Instagram-Icon.png" alt="Instagram">
+        </a>
+        <a href="#" aria-label="Twitter" class="iconSocialMedia">
+            <img src="./img/Twitter-Icon.png" alt="Twitter">
+        </a>
+    </div>
+</footer>
 </body>
 </html>

@@ -4,40 +4,102 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ECOPHOS — Noticias</title>
-  <link rel="stylesheet" href="../css/style.css"/>
-  <!-- (opcional) estilos específicos de cards; si ya tienes uno para proyectos, puedes reutilizarlo -->
-  <link rel="stylesheet" href="../css/styleNews.css"/>
+
+  <!-- Estilos base -->
+  <link href="../css/index.css" rel="stylesheet">
+  <link href="../css/ecophos.css" rel="stylesheet">
+  <link href="../css/styleNews.css" rel="stylesheet">
 </head>
+
 <body>
-<header class="topbar">
-  <div class="brand">ECOPHOS</div>
-  <nav class="nav">
-    <a href="../index.html" class="nav-link">Inicio</a>
-    <a href="./nosotros.html" class="nav-link">Nosotros</a>
-    <a href="./proyectos.html" class="nav-link">Proyectos</a>
-    <a href="./servicios.html" class="nav-link">Servicios</a>
-    <a href="./noticias.html" class="nav-link is-active">Noticias</a>
-    <a href="./contacto.html" class="nav-link">Contacto</a>
-    <a href="./perfil.html" class="nav-link">Mi perfil</a>
-  </nav>
-</header>
 
-<!-- Cabecera -->
-<section class="page-head page-head--blue">
-  <div class="page-head__inner">
-    <h1>Noticias y novedades</h1>
-    <p class="lead">Actualizaciones, logros y avances en energía sostenible.</p>
+  <!-- Redes sociales -->
+  <div class="socialMedia">
+    <div class="socialMediaLinks">
+      <div class="iconSocialMedia">
+        <img src="../img/Facebook-Icon.png" alt="Facebook">
+      </div>
+      <p class="Whiteparagraph">Facebook</p>
+    </div>
+    <div class="socialMediaLinks">
+      <div class="iconSocialMedia">
+        <img src="../img/Instagram-Icon.png" alt="Instagram">
+      </div>
+      <p class="Whiteparagraph">Instagram</p>
+    </div>
+    <div class="socialMediaLinks">
+      <div class="iconSocialMedia">
+        <img src="../img/Twitter-Icon.png" alt="Twitter">
+      </div>
+      <p class="Whiteparagraph">Twitter</p>
+    </div>
+    <div class="iconProfilePhoto"></div>
   </div>
-</section>
 
-<main class="container">
-  <!-- Estado de carga -->
-  <p id="newsMsg" class="muted" style="margin:16px 0;">Cargando noticias…</p>
+  <!-- Navegación -->
+  <div class="Sobreponer">
+    <div class="navegacion">
+        <a id="logoECOPHOSNegro">ECO <span id="logoECOPHOSAmarillo">PHOS</span></a>
+        <a href="nosotros.html">Nosotros</a><p>|</p>
+        <a href="proyectos.html">Proyectos</a><p>|</p>
+        <a href="servicios.html">Servicios</a><p>|</p>
+        <a href="noticias.html" class="active">Noticias</a><p>|</p>
+        <a href="contacto.html">Contacto</a><p>|</p>
+        <a href="perfil.html">Mi perfil</a>
+    </div>
+  </div>
 
-  <!-- Grid de noticias -->
-  <section id="newsGrid" class="cards-grid" aria-live="polite"></section>
-</main>
+  <!-- Contenido principal -->
+  <main class="container">
+    <div class="tituloPrincipalServicios">
+      <h3>Últimas Noticias</h3>
+    </div>
 
-<script src="../js/news_public.js"></script>
+    <!-- Estado de carga -->
+    <p id="newsMsg" class="muted" style="margin:16px 0; text-align:center;">Cargando noticias…</p>
+
+    <!-- Grid de noticias -->
+    <section id="newsGrid" class="cards-grid" aria-live="polite"></section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="seccionesFooter footer-brand">
+      <a id="logoECOPHOSBlanco">ECO <span id="logoECOPHOSAmarillo">PHOS</span></a>
+      <p>Innovando en energías limpias y sostenibles para un futuro más verde.</p>
+    </div>
+
+    <div class="seccionesFooter">
+      <nav class="footer-nav">
+        <div class="divisionInfo">
+          <h3>Información</h3>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="servicios.html">Servicios</a>
+        </div>
+
+        <div class="divisionInfo">
+          <h3 class="centrar" id="logoECOPHOSAmarillo">Canales de comunicación</h3>
+          <a href="contacto.html">Contacto</a>
+          <a href="noticias.html">Noticias</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="seccionesFooter footer-social">
+      <a href="#" aria-label="Facebook" class="iconSocialMedia">
+        <img src="../img/Facebook-Icon.png" alt="Facebook">
+      </a>
+      <a href="#" aria-label="Instagram" class="iconSocialMedia">
+        <img src="../img/Instagram-Icon.png" alt="Instagram">
+      </a>
+      <a href="#" aria-label="Twitter" class="iconSocialMedia">
+        <img src="../img/Twitter-Icon.png" alt="Twitter">
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/news_public.js"></script>
 </body>
 </html>
