@@ -1,0 +1,19 @@
+{
+  "name": "ecophos",
+  "version": "1.0.0",
+  "description": "Proyecto Ecophos con conexión a MySQL",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mysql2": "^3.15.2",
+    "express": "^4.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

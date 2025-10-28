@@ -225,6 +225,18 @@ router.delete('/news/:id', adminRequired, async (req, res) => {
   res.json({ success: true });
 });
 
+// --- Noticias públicas (sin autenticación) ---
+router.get('/news/all', async (_req, res) => {
+  try {
+    const items = await readNews();
+    items.sort((a, b) => new Date(b.datePublished) - new Date(a.datePublished));
+    res.json(items);
+  } catch (e) {
+    console.error('Error cargando noticias públicas:', e);
+    res.status(500).json({ error: 'Error al cargar noticias' });
+  }
+});
+
 // Crear usuario (solo admin)
 router.post('/users', adminRequired, async (req, res) => {
   try {

@@ -32,3 +32,4 @@ app.use(express.static(FRONT_DIR));
 app.get('/*', (_req, res) => res.sendFile(path.join(FRONT_DIR, 'index.html')));
 
 app.listen(PORT, () => console.log(`✅ Backend http://localhost:${PORT}`));
+
